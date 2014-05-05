@@ -644,8 +644,16 @@ def main():
   d1 = time.strptime(dx1,"%b %d, %Y %I:%M %p")
   d2 = time.strptime(dx2,"%b %d, %Y %I:%M %p")
 
-  d1=(datetime.date.fromtimestamp(time.mktime(d1)) + datetime.timedelta(hours=4)).timetuple()
-  d2=(datetime.date.fromtimestamp(time.mktime(d2)) + datetime.timedelta(hours=4)).timetuple() 
+  print d1
+  print d2
+
+  d1=(time.mktime(d1)+14400)#datetime.timedelta(hours=04)).timetuple()
+  d2=(time.mktime(d2)+14400)#datetime.timedelta(hours=04)).timetuple() 
+  d1= time.localtime(d1)
+  d2= time.localtime(d2)
+  
+  print d1
+  print d2
 
   #d1=time.mktime(d1).localtime()
   #d2=d2.localtime()

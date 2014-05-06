@@ -618,54 +618,54 @@ def main():
   x = bstest.uTaboo()
   eventInfo = x.parseFromfile()
 
-  #for event in eventInfo:
+  for event in eventInfo:
 
-  event=eventInfo[12]
+  #event=eventInfo[12]
 
-  day=event["date"].split(',')[0].split()[1]
-  #time=event["time"]
+    day=event["date"].split(',')[0].split()[1]
+    #time=event["time"]
 
-  #print event["time"].split()[0].split(':')
+    #print event["time"].split()[0].split(':')
 
-  #print event["date"] + " " + event["time"]
+    #print event["date"] + " " + event["time"]
 
-  dx1 = (event["date"] + " " + event["time"].split('-')[0]).strip()
+    dx1 = (event["date"] + " " + event["time"].split('-')[0]).strip()
 
-  dx2 = (event["date"] + " " + event["time"].split('-')[1].strip()).strip()
+    dx2 = (event["date"] + " " + event["time"].split('-')[1].strip()).strip()
 
-  print dx1
+    print dx1
 
 
-  #May 6, 2014 9:00 PM   %b %d, %Y %I:%M %p
+    #May 6, 2014 9:00 PM   %b %d, %Y %I:%M %p
 
-  #d1 = time.strptime("2014-05-25T10:00:00Z","%Y-%m-%dT%H:%M:%SZ")
-  #d2 = time.strptime("2014-05-25T10:30:00Z","%Y-%m-%dT%H:%M:%SZ")
+    #d1 = time.strptime("2014-05-25T10:00:00Z","%Y-%m-%dT%H:%M:%SZ")
+    #d2 = time.strptime("2014-05-25T10:30:00Z","%Y-%m-%dT%H:%M:%SZ")
 
-  d1 = time.strptime(dx1,"%b %d, %Y %I:%M %p")
-  d2 = time.strptime(dx2,"%b %d, %Y %I:%M %p")
+    d1 = time.strptime(dx1,"%b %d, %Y %I:%M %p")
+    d2 = time.strptime(dx2,"%b %d, %Y %I:%M %p")
 
-  print d1
-  print d2
+    print d1
+    print d2
 
-  d1=(time.mktime(d1)+14400)#datetime.timedelta(hours=04)).timetuple()
-  d2=(time.mktime(d2)+14400)#datetime.timedelta(hours=04)).timetuple() 
-  d1= time.localtime(d1)
-  d2= time.localtime(d2)
-  
-  print d1
-  print d2
+    d1=(time.mktime(d1)+14400)#datetime.timedelta(hours=04)).timetuple()
+    d2=(time.mktime(d2)+14400)#datetime.timedelta(hours=04)).timetuple() 
+    d1= time.localtime(d1)
+    d2= time.localtime(d2)
+    
+    print d1
+    print d2
 
-  #d1=time.mktime(d1).localtime()
-  #d2=d2.localtime()
+    #d1=time.mktime(d1).localtime()
+    #d2=d2.localtime()
 
-  #d1=d1.
+    #d1=d1.
 
-  start_time = time.strftime('%Y-%m-%dT%H:%M:%S.000Z', d1)
-  end_time = time.strftime('%Y-%m-%dT%H:%M:%S.000Z', d2)
-  new_event = sample._InsertEvent(event["emp"], event["emp"], event["loc"], start_time, end_time, recurrence_data=None)
-  print 'New single event inserted: %s' % (new_event.id.text,)
-  print '\tEvent edit URL: %s' % (new_event.GetEditLink().href,)
-  print '\tEvent HTML URL: %s\n' % (new_event.GetHtmlLink().href,)
+    start_time = time.strftime('%Y-%m-%dT%H:%M:%S.000Z', d1)
+    end_time = time.strftime('%Y-%m-%dT%H:%M:%S.000Z', d2)
+    new_event = sample._InsertEvent(event["emp"], event["emp"], event["loc"], start_time, end_time, recurrence_data=None)
+    print 'New single event inserted: %s' % (new_event.id.text,)
+    print '\tEvent edit URL: %s' % (new_event.GetEditLink().href,)
+    print '\tEvent HTML URL: %s\n' % (new_event.GetHtmlLink().href,)
 
 
 
